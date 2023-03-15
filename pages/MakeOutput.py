@@ -1,9 +1,6 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
 import plotly.express as px
-
-
 
 st.title("Create Out put")
 st.text("This is a section that you can upload your CSV file here ")
@@ -16,9 +13,16 @@ if uploadFile:
     st.header('Data Statistics')
     st.write(dataframe)
 #   Select and filter data
-    inputs = []
-    for c in dataframe.columns:
-        inputs.append(st.text_input('Input your range:'))
+    cropId = st.text_input( 'Crop id')
+    potId = st.text_input('Pot id')
+#   Filter the Data
+    temp = dataframe
+    if potId:
+        temp = temp.loc[temp['Pot ID'] == potId]
+    if cropId:
+        temp = temp.loc[temp['Crop ID'] == cropId]
+    newdf = temp
+    st.write(newdf)
 
 #   CREATE PLOT
     x_axis_val = st.selectbox('Select X-Axis Value', options=dataframe.columns)
