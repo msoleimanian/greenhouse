@@ -1,3 +1,4 @@
+pip==23.0.1
 streamlit==0.68.1
 pandas==0.25.3
 base58==2.0.0
