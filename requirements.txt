@@ -6,4 +6,4 @@ matplotlib
 numpy
 yfinance
 lxml
-
+plotly.express
