@@ -21,7 +21,7 @@ if options == 'Growth':
         st.write(dataframe)
         time = st.selectbox('Select the type of the time stamp', options=dataframe.columns)
         metric = st.selectbox('Growth metric', options=dataframe.columns)
-        baseCloumn = st.selectbox('which base ? ', options=dataframe.columns)
+        baseCloumn = st.selectbox('Base', options=dataframe.columns)
 
         newdataframe = dataframe[[time,baseCloumn,metric]]
 #        st.line_chart(newdataframe , x=newdataframe[time], y=newdataframe[metric])
