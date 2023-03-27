@@ -23,7 +23,7 @@ if options == 'Growth':
         metric = st.selectbox('Growth metric', options=dataframe.columns)
         baseCloumn = st.selectbox('which base ? ', options=dataframe.columns)
 
-        newdataframe = dataframe[['timestamp',baseCloumn,metric]]
+        newdataframe = dataframe[[time,baseCloumn,metric]]
 #        st.line_chart(newdataframe , x=newdataframe[time], y=newdataframe[metric])
         dictData = newdataframe.to_dict()
         print("MOhsbaESSAojaSJojasd")
@@ -65,7 +65,6 @@ if options == 'Growth':
 
         #timestamp
         tempdf = dataframe[time]
-        st.write(tempdf)
         timedict = tempdf.to_dict()
         print(timedict)
         timear = []
@@ -75,6 +74,7 @@ if options == 'Growth':
             timear.append(val)
         finalDataframe.insert(0, time, timear)
         print(finalDataframe)
+        st.write(finalDataframe)
         st.line_chart(finalDataframe , x='timestamp')
 
 
